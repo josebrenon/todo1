@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(72, 47, 160);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+    color: white;
+    text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 25px;
+    background-color: rgb(124, 96, 226);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+    
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p{
+    color: white;
 }
-
-.App-link {
-  color: #61dafb;
+img{
+    display: flex;
+    margin: auto;
+    width: 70%;
+    padding: 10px 10px;
+    
 }
+span:hover{
+    cursor: pointer;
+    text-decoration: line-through;
+    color: lightgray;
+}
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: auto;
+    margin-top: 8px;
+    height: 40px;
+    background-color: rgb(124, 96, 226);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+    
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.add:hover{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(124, 96, 226);
+    color: rgb(124, 96, 226);
+}
+.add-disable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: auto;
+    margin-top: 8px;
+    height: 40px;
+    opacity: 30%;
+    background-color: rgb(124, 96, 226);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+}
+.apaga-tudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: auto;
+    margin-top: 8px;
+    height: 40px;
+    opacity: 30%;
+    background-color: rgb(124, 96, 226);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+}
+.apaga-tudo:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: auto;
+    margin-top: 8px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 100%;
+    background-color: rgb(216, 58, 58);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+}
+.titulo-tarefas{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 8px;
+}
+.listadetarefas{
+    width: 100%;
+    margin: auto;
+}
+.item{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(74, 50, 163);
+}
+.item:hover{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(57, 38, 126);
+}
+.itemcompleto{
+    text-align: center;
+    background: #1e1f2e;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    padding-right: 10px;
+    cursor: pointer; 
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+.remover{
+    margin: auto;
+    height: 35px;
+    opacity: 30%;
+    background-color: rgb(124, 96, 226);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+    
+}
+.remover:hover{
+    margin: auto;
+    height: 35px;
+    opacity: 100%;
+    background-color: rgb(216, 58, 58);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
 }
