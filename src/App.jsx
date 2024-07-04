@@ -13,17 +13,16 @@ export default function App() {
 
   function adicionarTarefa() {
     setListaTarefas((old) => {
-      return [
-        ...old,
-        { id: idTarefa.current, texto: tarefa, isCompleted: false },
-      ];
+      return [...old, { id: idTarefa.current, texto: tarefa }];
     });
     idTarefa.current++;
     setTarefa("");
     inputRef.current.focus();
   }
-  function limparTarefas() {
-    setListaTarefas([]);
+  function limparTudo() {
+    setListaTarefas((old) => {
+      return [];
+    });
     idTarefa.current = 0;
   }
 
@@ -48,7 +47,8 @@ export default function App() {
         onChange={(e) => {
           setTarefa(e.target.value);
         }}
-      />
+      />{" "}
+      <br />
       {tarefa === "" ? (
         <button className="add-disable" disabled>
           Adicionar
@@ -59,53 +59,49 @@ export default function App() {
         </button>
       )}{" "}
       <br />
-      <div className="listadetarefas">
-        <p className="titulo-tarefas">Tarefas: </p>
+      <p className="titulo-tarefas">Tarefas: </p>
+      <div>
         {listaTarefas.length < 1 ? (
           <img
             src="https://cdn-icons-png.flaticon.com/512/1612/1612656.png"
             alt="img todo"
           />
         ) : (
-          <div>
-            {listaTarefas.map((item, t) => {
-              return (
-                <div>
-                  <p
-                    key={t.id}
-                    className={item.isCompleted ? "itemcompleto" : "item"}
-                  >
-                    <span
-                      onClick={() => {
-                        clicou(t);
-                      }}
-                    >
-                      {item.texto}{" "}
-                    </span>
-                    <button
-                      className="remover"
-                      onClick={() => {
-                        removerTarefa(item.id);
-                      }}
-                    >
-                      REMOVER
-                    </button>
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+          listaTarefas.map((t, index) => {
+            return (
+              <div
+                key={t.id}
+                //className="item"
+                className={t.isCompleted ? "itemcompleto" : "item"}
+              >
+                <span
+                  onClick={() => {
+                    clicou(index);
+                  }}
+                >
+                  {t.texto}{" "}
+                </span>
+                <button
+                  className="remover"
+                  onClick={() => {
+                    removerTarefa(t.id);
+                  }}
+                >
+                  REMOVER
+                </button>
+              </div>
+            );
+          })
         )}
-        <div>
-          {listaTarefas.length < 1 ? (
-            <p></p>
-          ) : (
-            <button className="apaga-tudo" onClick={limparTarefas}>
-              Limpar tudo
-            </button>
-          )}
-        </div>
       </div>
+      {}
+      {listaTarefas.length < 1 ? (
+        <p></p>
+      ) : (
+        <button className="apaga-tudo" onClick={limparTudo}>
+          Limpar tudo
+        </button>
+      )}
     </>
   );
 }
